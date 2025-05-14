@@ -2,12 +2,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-
-QT_BEGIN_NAMESPACE
-namespace Ui {
-class MainWindow;
-}
-QT_END_NAMESPACE
+#include <QTimer>
+#include <QLabel>
+#include <QPushButton>
+#include <QSpinBox>
 
 class MainWindow : public QMainWindow
 {
@@ -17,7 +15,32 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+protected:
+    void closeEvent(QCloseEvent *event) override;
+
+private slots:
+    void startTimer();
+    void pauseTimer();
+    void resetTimer();
+    void updateTime();
+
 private:
-    Ui::MainWindow *ui;
+    void switchState();
+    void loadSettings();
+    void saveSettings();
+
+    QTimer *timer;
+    QLabel *timeLabel;
+    QLabel *statusLabel;
+    QPushButton *startButton;
+    QPushButton *pauseButton;
+    QPushButton *resetButton;
+    QSpinBox *workSpinBox;
+    QSpinBox *restSpinBox;
+
+    int remainingSeconds;
+    bool isWorking;
+    bool isPaused;
 };
-#endif
+
+#endif //写你大坝
