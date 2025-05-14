@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="TimerWidget" name="timerContainer" native="true">
+    <property name="geometry">
+     <rect>
+      <x>19</x>
+      <y>19</y>
+      <width>761</width>
+      <height>151</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="ClockWidget" name="clockContainer" native="true">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>170</y>
+      <width>231</width>
+      <height>71</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="NoteWidget" name="noteContainer" native="true">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>200</y>
+      <width>471</width>
+      <height>361</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>专注集成组件</string>
+    </property>
+   </widget>
+   <addaction name="menu"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>TimerWidget</class>
+   <extends>QWidget</extends>
+   <header>timerwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ClockWidget</class>
+   <extends>QWidget</extends>
+   <header>clockwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>NoteWidget</class>
+   <extends>QWidget</extends>
+   <header>notewidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TimerWidget</class>
+ <widget class="QWidget" name="TimerWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>452</width>
+    <height>109</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>TimerWidget</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout" stretch="3,1">
+   <item>
+    <widget class="QLCDNumber" name="lcdDisplay">
+     <property name="styleSheet">
+      <string notr="true">QLCDNumber {
+    background-color: #333333;  /* 背景 */
+    color: #00FFCC;            /* 数字 */
+    border: 2px solid #555555;
+    border-radius: 5px;
+}</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="startButton">
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    min-width: 80px;
+    padding: 5px;
+    background-color: #4A4A4A;
+    color: white;
+    border: none;
+    border-radius: 3px;
+}
+QPushButton:hover {
+    background-color: #5A5A5A;
+}
+QPushButton:checked {
+    background-color: #0078D4;  /* 选中状态颜色 */
+}</string>
+       </property>
+       <property name="text">
+        <string>开始</string>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pauseButton">
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    min-width: 80px;
+    padding: 5px;
+    background-color: #4A4A4A;
+    color: white;
+    border: none;
+    border-radius: 3px;
+}
+QPushButton:hover {
+    background-color: #5A5A5A;
+}
+QPushButton:checked {
+    background-color: #0078D4;  /* 选中状态颜色 */
+}</string>
+       </property>
+       <property name="text">
+        <string>装饰品</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="resetButton">
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    min-width: 80px;
+    padding: 5px;
+    background-color: #4A4A4A;
+    color: white;
+    border: none;
+    border-radius: 3px;
+}
+QPushButton:hover {
+    background-color: #5A5A5A;
+}
+QPushButton:checked {
+    background-color: #0078D4;  /* 选中状态颜色 */
+}</string>
+       </property>
+       <property name="text">
+        <string>重设</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_4">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>startButton</sender>
+   <signal>clicked()</signal>
+   <receiver>TimerWidget</receiver>
+   <slot>startButton_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>100</x>
+     <y>84</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>248</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>resetButton</sender>
+   <signal>clicked()</signal>
+   <receiver>TimerWidget</receiver>
+   <slot>resetButton_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>371</x>
+     <y>86</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>598</x>
+     <y>232</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pauseButton</sender>
+   <signal>clicked()</signal>
+   <receiver>TimerWidget</receiver>
+   <slot>pauseButton_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>240</x>
+     <y>88</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>526</x>
+     <y>276</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>startButton_clicked()</slot>
+  <slot>pauseButton_clicked()</slot>
+  <slot>resetButton_clicked()</slot>
+ </slots>
+</ui>
